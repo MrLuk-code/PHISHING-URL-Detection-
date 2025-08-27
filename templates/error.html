@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract Features</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: url("static/images/image1.jpg");
+        }
+        .navbar {
+            background-color: #28a745;
+            padding: 20px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+			text-shadow: 2px 4px 4px rgb(46 91 173/0.6);
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+			text-shadow: 2px 4px 4px rgb(49 88 175/0.9);
+        }
+        h1,h2 ,ul {
+            color: white;
+            text-align: center;
+        }
+		.a{
+			color: blue;
+            text-decoration: none;
+            margin-left:220px;
+            font-weight: bold;
+			text-align: center;
+		}
+		input{
+			width:96%;
+			padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+		}
+        textarea {
+            width: 96%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+			margin-top:110px;
+            background: #000.5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer {
+            background-color: #28a745;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }span {
+			color:red;
+			}
+		.sp{
+			color:blue;
+		}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+       <a href="/">HOME</a>
+        <a href="online">ONLINE-URL-CHECK</a>
+        <a href="offline">TEST-DATASET</a>
+        
+    </div>
+    <div class="container">
+		<h1>Error!</h1>
+		<h1>The Exception message is: {{e}}</h1>
+		
+		{% with messages = get_flashed_messages(with_categories=true) %}
+			{% if messages %}
+				<ul>
+						{% for category, message in messages %}
+							<li style="color:red;"> {{message}}<li>
+						{% endfor %}
+				</ul>
+			{% endif %}
+		{%  endwith %}
+		<a class= "a" href="/"> Go back to home page</a>
+    </div>
+    	</div>
+    <div class="footer">
+        <p>&copy; 2025 Real Phishing Url Detection Model</p>
+    </div>
+</body>
+</html>
